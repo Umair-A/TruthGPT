@@ -1,7 +1,11 @@
 import openai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Initialize the OpenAI API key
-openai.api_key = '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'
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def is_tweet_true(tweet_text):
     prompt = f"Is the following Twitter post true, false or uncertain? '{tweet_text}'"
